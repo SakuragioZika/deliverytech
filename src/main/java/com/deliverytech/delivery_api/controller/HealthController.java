@@ -2,6 +2,7 @@ package com.deliverytech.delivery_api.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+
 import java.time.LocalDateTime;
 import java.util.Map;
 
@@ -13,7 +14,8 @@ public class HealthController {
         return Map.of(
             "status", "UP",
             "timestamp", LocalDateTime.now().toString(),
-            "service", "Delivery API"
+            "service", "Delivery API",
+            "javaVersion", System.getProperty("java.version")
         );
     }
 
@@ -22,7 +24,7 @@ public class HealthController {
         return new AppInfo(
             "Delivery Tech API",
             "1.0.0",
-            "Giovanni",
+            "Giovanni dos Santos",
             "JDK 21",
             "Spring Boot 3.2.x"
         );
